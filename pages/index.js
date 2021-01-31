@@ -12,11 +12,13 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="/">Personal Expense Tracker</a>
+          Welcome to <a href="/">Kokila Expense Tracker</a>
         </h1>
 
         <p className={styles.description}>
-          Please Register/Login <Link href="/login"> here </Link>
+          Please <Link href="/login"> Login </Link>
+          {" / "}
+          <Link href="/register"> Register </Link>
         </p>
       </main>
     </div>
