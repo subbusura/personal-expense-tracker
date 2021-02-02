@@ -9,9 +9,11 @@ const dev = process.env.NODE_ENV !== "production";
 const Nextapp = next({ dev });
 const handle = Nextapp.getRequestHandler();
 
+const PORT = process.env.PORT || 3000;
+
 Nextapp.prepare().then(() => {
   app.use(handle);
-  server.listen(3000, (err) => {
+  server.listen(PORT, (err) => {
     if (err) throw err;
     console.log("> Ready on http://localhost:3000");
   });
