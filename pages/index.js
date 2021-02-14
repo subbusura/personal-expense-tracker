@@ -1,7 +1,5 @@
 import React from "react";
-import Head from "next/head";
 import Link from "next/link";
-import styles from "../styles/Home.module.css";
 import io from "socket.io-client";
 
 export default class Home extends React.Component {
@@ -21,28 +19,31 @@ export default class Home extends React.Component {
     });
   }
 
-  componentWillUnmount() {}
+  componentWillUnmount() {
+    this.socket.close();
+  }
 
   render() {
     return (
-      <div className={styles.container}>
-        <Head>
-          <title>Create Next App</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-
-        <main className={styles.main}>
-          <h1 className={styles.title}>
-            Welcome to <a href="/">{this.state.message} Expense Tracker</a>
-          </h1>
-
-          <p className={styles.description}>
-            Please <Link href="/login"> Login </Link>
-            {" / "}
-            <Link href="/register"> Register </Link>
-          </p>
-        </main>
-      </div>
+      <>
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-12 col-md-12 col-xl-4 my-5">
+              <h1 className="display-4 text-center mb-3">
+                Personal Expense Tracker
+              </h1>
+              <div className="text-center">
+                <small className="text-muted text-center">
+                  {this.state.message}
+                </small>
+              </div>
+              <div className="mt-2 text-center">
+                <Link href={"/account/login"}>Log in / Register</Link>.
+              </div>
+            </div>
+          </div>
+        </div>
+      </>
     );
   }
 }
