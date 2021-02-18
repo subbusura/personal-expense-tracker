@@ -3,6 +3,7 @@ import nc from "next-connect";
 import { Formik, Field, Form } from "formik";
 import axios from "axios";
 import * as yup from "yup";
+import { getSession } from "next-auth/client";
 
 const RegisterSchema = yup.object().shape({
   name: yup.string().required(),
@@ -113,6 +114,17 @@ export default function Register() {
 
 export async function getServerSideProps({ req, res }) {
   //conditional redirections
+  const session = await getSession({ req: req });
+
+  if (session) {
+    return {
+      redirect: {
+        permanent: false,
+        destination: "/wallet"
+      }
+    };
+  }
+
   const handler = nc();
   try {
     await handler.run(req, res);

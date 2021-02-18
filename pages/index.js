@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import io from "socket.io-client";
+import { getSession } from "next-auth/client";
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -38,7 +39,7 @@ export default class Home extends React.Component {
                 </small>
               </div>
               <div className="mt-2 text-center">
-                <Link href={"/account/login"}>Log in / Register</Link>.
+                <Link href={"/auth/login"}>Log in / Register</Link>.
               </div>
             </div>
           </div>
@@ -46,4 +47,23 @@ export default class Home extends React.Component {
       </>
     );
   }
+}
+
+export async function getServerSideProps(context) {
+  const session = await getSession({ req: context.req });
+
+  console.log("Request Handleing", session);
+
+  if (session) {
+    return {
+      redirect: {
+        permanent: false,
+        destination: "/wallet"
+      }
+    };
+  }
+
+  return {
+    props: {}
+  };
 }
