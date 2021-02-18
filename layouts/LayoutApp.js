@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { signOut, useSession } from "next-auth/client";
 
 const mainMenu = [
   {
@@ -28,6 +29,16 @@ const mainMenu = [
 ];
 
 export default function LayoutApp({ children }) {
+  const handleLogout = async (e) => {
+    e.preventDefault();
+
+    const response = await signOut({
+      redirect: true
+    });
+
+    console.log("LOG LOGOUT", response);
+  };
+
   return (
     <div className={"h-100"}>
       <div id="app-container" className="menu-default sub-hidden">
@@ -62,6 +73,17 @@ export default function LayoutApp({ children }) {
                       </li>
                     );
                   })}
+
+                  <li className={"nav-item"}>
+                    <a href={"#"} onClick={handleLogout}>
+                      {" "}
+                      <i
+                        className={"fa fa-sign-out"}
+                        aria-hidden="true"
+                      ></i>{" "}
+                      Logout{" "}
+                    </a>
+                  </li>
                 </ul>
               </div>
             </div>

@@ -5,6 +5,7 @@ export default nc()
   .use(dbMiddleware)
   .post((req, res) => {
     let { body } = req;
+    //TODO Store data in  Database
 
     res.statusCode = 200;
     res.json(body);
