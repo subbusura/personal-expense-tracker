@@ -9,4 +9,5 @@ const SessionsSchema = new mongoose.Schema({
   updated_at: { type: Date, default: new Date() }
 });
 
-export default mongoose.model("sessions", SessionsSchema);
+export default mongoose.models.sessions ||
+  mongoose.model("sessions", SessionsSchema);

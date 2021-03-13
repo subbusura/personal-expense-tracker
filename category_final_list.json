@@ -1,0 +1,368 @@
+[
+  {
+    "cat_id": 1,
+    "cat_name": "Withdrawal",
+    "cat_type": 2,
+    "parent_id": 0
+  },
+  {
+    "cat_id": 2,
+    "cat_name": "Deposit",
+    "cat_type": 1,
+    "parent_id": 0
+  },
+  {
+    "cat_id": 3,
+    "cat_name": "Interest Money",
+    "cat_type": 1,
+    "parent_id": 0
+  },
+  {
+    "cat_id": 4,
+    "cat_name": "Food & Beverage",
+    "cat_type": 2,
+    "parent_id": 0
+  },
+  {
+    "cat_id": 5,
+    "cat_name": "Bills & Utilities",
+    "cat_type": 2,
+    "parent_id": 0
+  },
+  {
+    "cat_id": 6,
+    "cat_name": "Transportation",
+    "cat_type": 2,
+    "parent_id": 0
+  },
+  {
+    "cat_id": 7,
+    "cat_name": "Shopping",
+    "cat_type": 2,
+    "parent_id": 0
+  },
+  {
+    "cat_id": 8,
+    "cat_name": "Friends & Lover",
+    "cat_type": 2,
+    "parent_id": 0
+  },
+  {
+    "cat_id": 9,
+    "cat_name": "Entertainment",
+    "cat_type": 2,
+    "parent_id": 0
+  },
+  {
+    "cat_id": 10,
+    "cat_name": "Travel",
+    "cat_type": 2,
+    "parent_id": 0
+  },
+  {
+    "cat_id": 11,
+    "cat_name": "Health & Fitness",
+    "cat_type": 2,
+    "parent_id": 0
+  },
+  {
+    "cat_id": 12,
+    "cat_name": "Gifts & Donations",
+    "cat_type": 2,
+    "parent_id": 0
+  },
+  {
+    "cat_id": 13,
+    "cat_name": "Family",
+    "cat_type": 2,
+    "parent_id": 0
+  },
+  {
+    "cat_id": 14,
+    "cat_name": "Education",
+    "cat_type": 2,
+    "parent_id": 0
+  },
+  {
+    "cat_id": 15,
+    "cat_name": "Investment",
+    "cat_type": 2,
+    "parent_id": 0
+  },
+  {
+    "cat_id": 16,
+    "cat_name": "Business",
+    "cat_type": 2,
+    "parent_id": 0
+  },
+  {
+    "cat_id": 17,
+    "cat_name": "Insurances",
+    "cat_type": 2,
+    "parent_id": 0
+  },
+  {
+    "cat_id": 18,
+    "cat_name": "Loan",
+    "cat_type": 2,
+    "parent_id": 0
+  },
+  {
+    "cat_id": 19,
+    "cat_name": "Fees & Charges",
+    "cat_type": 2,
+    "parent_id": 0
+  },
+  {
+    "cat_id": 20,
+    "cat_name": "Withdrawal",
+    "cat_type": 2,
+    "parent_id": 0
+  },
+  {
+    "cat_id": 21,
+    "cat_name": "Repayment",
+    "cat_type": 2,
+    "parent_id": 0
+  },
+  {
+    "cat_id": 22,
+    "cat_name": "Others",
+    "cat_type": 2,
+    "parent_id": 0
+  },
+  {
+    "cat_id": 23,
+    "cat_name": "Award",
+    "cat_type": 1,
+    "parent_id": 0
+  },
+  {
+    "cat_id": 24,
+    "cat_name": "Interest Money",
+    "cat_type": 1,
+    "parent_id": 0
+  },
+  {
+    "cat_id": 25,
+    "cat_name": "Salary",
+    "cat_type": 1,
+    "parent_id": 0
+  },
+  {
+    "cat_id": 26,
+    "cat_name": "Debt",
+    "cat_type": 1,
+    "parent_id": 0
+  },
+  {
+    "cat_id": 27,
+    "cat_name": "Gifts",
+    "cat_type": 1,
+    "parent_id": 0
+  },
+  {
+    "cat_id": 28,
+    "cat_name": "Selling",
+    "cat_type": 1,
+    "parent_id": 0
+  },
+  {
+    "cat_id": 29,
+    "cat_name": "Debt Collection",
+    "cat_type": 1,
+    "parent_id": 0
+  },
+  {
+    "cat_id": 30,
+    "cat_name": "Others",
+    "cat_type": 1,
+    "parent_id": 0
+  },
+  {
+    "cat_id": 31,
+    "cat_name": "Sports",
+    "cat_type": 2,
+    "parent_id": 11
+  },
+  {
+    "cat_id": 32,
+    "cat_name": "Doctor",
+    "cat_type": 2,
+    "parent_id": 11
+  },
+  {
+    "cat_id": 33,
+    "cat_name": "Pharmacy",
+    "cat_type": 2,
+    "parent_id": 11
+  },
+  {
+    "cat_id": 34,
+    "cat_name": "Personal Care",
+    "cat_type": 2,
+    "parent_id": 11
+  },
+  {
+    "cat_id": 35,
+    "cat_name": "Movies",
+    "cat_type": 2,
+    "parent_id": 9
+  },
+  {
+    "cat_id": 36,
+    "cat_name": "Games",
+    "cat_type": 2,
+    "parent_id": 9
+  },
+  {
+    "cat_id": 37,
+    "cat_name": "Books",
+    "cat_type": 2,
+    "parent_id": 14
+  },
+  {
+    "cat_id": 38,
+    "cat_name": "Marriage",
+    "cat_type": 2,
+    "parent_id": 12
+  },
+  {
+    "cat_id": 39,
+    "cat_name": "Funeral",
+    "cat_type": 2,
+    "parent_id": 12
+  },
+  {
+    "cat_id": 40,
+    "cat_name": "Charity",
+    "cat_type": 2,
+    "parent_id": 12
+  },
+  {
+    "cat_id": 41,
+    "cat_name": "Restaurants",
+    "cat_type": 2,
+    "parent_id": 4
+  },
+  {
+    "cat_id": 42,
+    "cat_name": "Café",
+    "cat_type": 2,
+    "parent_id": 4
+  },
+  {
+    "cat_id": 43,
+    "cat_name": "Taxi",
+    "cat_type": 2,
+    "parent_id": 6
+  },
+  {
+    "cat_id": 44,
+    "cat_name": "Parking Fees",
+    "cat_type": 2,
+    "parent_id": 6
+  },
+  {
+    "cat_id": 45,
+    "cat_name": "Petrol",
+    "cat_type": 2,
+    "parent_id": 6
+  },
+  {
+    "cat_id": 46,
+    "cat_name": "Maintenance",
+    "cat_type": 2,
+    "parent_id": 6
+  },
+  {
+    "cat_id": 47,
+    "cat_name": "Clothing",
+    "cat_type": 2,
+    "parent_id": 7
+  },
+  {
+    "cat_id": 48,
+    "cat_name": "Footwear",
+    "cat_type": 2,
+    "parent_id": 7
+  },
+  {
+    "cat_id": 49,
+    "cat_name": "Accessories",
+    "cat_type": 2,
+    "parent_id": 7
+  },
+  {
+    "cat_id": 50,
+    "cat_name": "Electronics",
+    "cat_type": 2,
+    "parent_id": 7
+  },
+  {
+    "cat_id": 51,
+    "cat_name": "Phone",
+    "cat_type": 2,
+    "parent_id": 5
+  },
+  {
+    "cat_id": 52,
+    "cat_name": "Water",
+    "cat_type": 2,
+    "parent_id": 5
+  },
+  {
+    "cat_id": 53,
+    "cat_name": "Electricity",
+    "cat_type": 2,
+    "parent_id": 5
+  },
+  {
+    "cat_id": 54,
+    "cat_name": "Gas",
+    "cat_type": 2,
+    "parent_id": 5
+  },
+  {
+    "cat_id": 55,
+    "cat_name": "Television",
+    "cat_type": 2,
+    "parent_id": 5
+  },
+  {
+    "cat_id": 56,
+    "cat_name": "Internet",
+    "cat_type": 2,
+    "parent_id": 5
+  },
+  {
+    "cat_id": 57,
+    "cat_name": "Rentals",
+    "cat_type": 2,
+    "parent_id": 5
+  },
+  {
+    "cat_id": 58,
+    "cat_name": "Children & Babies",
+    "cat_type": 2,
+    "parent_id": 13
+  },
+  {
+    "cat_id": 59,
+    "cat_name": "Home Improvement",
+    "cat_type": 2,
+    "parent_id": 13
+  },
+  {
+    "cat_id": 60,
+    "cat_name": "Home Services",
+    "cat_type": 2,
+    "parent_id": 13
+  },
+  {
+    "cat_id": 61,
+    "cat_name": "Pets",
+    "cat_type": 2,
+    "parent_id": 13
+  }
+]

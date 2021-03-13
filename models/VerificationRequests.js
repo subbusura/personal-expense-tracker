@@ -7,7 +7,5 @@ const VerificationRequestSchema = new mongoose.Schema({
   updated_at: { type: Date, default: new Date() }
 });
 
-export default mongoose.model(
-  "verification_requests",
-  VerificationRequestSchema
-);
+export default mongoose.models.verification_requests ||
+  mongoose.model("verification_requests", VerificationRequestSchema);

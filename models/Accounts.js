@@ -12,4 +12,4 @@ const AccountsSchema = new mongoose.Schema({
   updated_at: { type: Date }
 });
 
-export default mongoose.model("accounts", AccountsSchema);
+export default mongoose.models.accounts || mongoose.model("accounts", AccountsSchema);
