@@ -1,10 +1,24 @@
 import NextAuth from "next-auth";
 import Providers from "next-auth/providers";
+import dbConnect from "./../../../utils/dbConnect";
+import UserModel from "./../../../models/users";
+import Bcrypt from "bcrypt";
 
 export default NextAuth({
   session: {
     jwt: true,
     maxAge: 30 * 24 * 60 * 60 // 30 days
+  },
+  jwt: {
+    // A secret to use for key generation - you should set this explicitly
+    // Defaults to NextAuth.js secret if not explicitly specified.
+    secret: process.env.JWT_SECRET, // 'INp8IvdIyeMcoGAgFGoA61DdBglwwSqnXJZkgz8PSnw',
+    // Set to true to use encryption. Defaults to false (signing only).
+    encryption: true
+    // You can define your own encode/decode functions for signing and encryption
+    // if you want to override the default behaviour.
+    // async encode({ secret, token, maxAge }) {},
+    // async decode({ secret, token, maxAge }) {},
   },
   pages: {
     signIn: "/auth/login",
@@ -27,20 +41,40 @@ export default NextAuth({
       // You can specify whatever fields you are expecting to be submitted.
       // e.g. domain, username, password, 2FA token, etc.
       credentials: {
-        username: { label: "Username", type: "text", placeholder: "jsmith" },
+        username: { label: "Username", type: "text", placeholder: "" },
         password: { label: "Password", type: "password" }
       },
       async authorize(credentials) {
         // Add logic here to look up the user from the credentials supplied
-        const user = {
-          id: 1,
-          name: "Subramani Krishnan",
-          email: "subramani@gmail.com"
-        };
 
-        if (credentials.username == "subramani@gmail.com") {
-          return user;
-        } else {
+        try {
+          await dbConnect();
+          let user = await UserModel.findOne({
+            auth_type: 1,
+            email: credentials.username
+          });
+
+          if (!user) {
+            return null;
+          }
+
+          const compare = await Bcrypt.compare(
+            credentials.password,
+            user.password
+          );
+
+          if (compare) {
+            return {
+              sub: user._id,
+              user_id: user._id,
+              name: user.name,
+              email: user.email,
+              image: user.image
+            };
+          } else {
+            return null;
+          }
+        } catch (error) {
           return null;
         }
       }
@@ -52,36 +86,31 @@ export default NextAuth({
   database: process.env.MONGODB_URI,
   callbacks: {
     async signIn(user, account, profile) {
-      return true;
+      return user;
     },
     async redirect(url, baseUrl) {
       return baseUrl;
     },
     async session(session, user) {
+      // console.log("session", user);
+      if (user?.user_id) {
+        session.user_id = user.user_id;
+      }
       return session;
     },
     async jwt(token, user, account, profile, isNewUser) {
+      if (user?.user_id) {
+        token.user_id = user.user_id;
+      }
       return token;
     }
   },
   events: {
-    async signIn(message) {
-      console.log("SING IN", message);
-    },
-    async signOut(message) {
-      console.log("SING OUT", message);
-    },
-    async createUser(message) {
-      console.log("CREATE USER", message);
-    },
-    async linkAccount(message) {
-      console.log("LINK ACCOUNT", message);
-    },
-    async session(message) {
-      console.log("SESSION", message);
-    },
-    async error(message) {
-      console.log("ERROR", message);
-    }
+    async signIn(message) {},
+    async signOut(message) {},
+    async createUser(message) {},
+    async linkAccount(message) {},
+    async session(message) {},
+    async error(message) {}
   }
 });

@@ -23,9 +23,15 @@ export default function Register() {
   const handleOnSubmit = async (values, { resetForm }) => {
     try {
       let response = await axios.post("/api/account/register", values);
-      console.log("response", response.data);
+
       resetForm();
     } catch (error) {
+      if (typeof error.response !== "undefined") {
+        if (error.response.status == 422) {
+          return error.response.data;
+        }
+      }
+
       console.log("response", error);
     }
   };
@@ -100,7 +106,7 @@ export default function Register() {
                 <div className="text-center">
                   <small className="text-muted text-center">
                     Already have an account?{" "}
-                    <Link href={"/account/login"}>Log in</Link>.
+                    <Link href={"/auth/login"}>Log in</Link>.
                   </small>
                 </div>
               </Form>

@@ -6,8 +6,6 @@ import { Spinner } from "reactstrap";
 import { Formik, Form, Field } from "formik";
 
 function Login({ router, providers }) {
-  console.log("PRI", providers);
-
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (values) => {
@@ -19,19 +17,14 @@ function Login({ router, providers }) {
     });
 
     setIsLoading(false);
-    console.log("Sign In", response);
 
-    if (response.status == 200) {
+    if (response.status === 200) {
       router.push("/wallet");
     } else {
       alert("Invalid username and password");
     }
 
     //router.push("/wallet");
-  };
-
-  const handleGitHubSingIn = async () => {
-    const response = await signIn("GitHub");
   };
 
   return (
@@ -51,7 +44,7 @@ function Login({ router, providers }) {
               }}
               onSubmit={handleSubmit}
             >
-              <Form>
+              <Form autoComplete={"off"}>
                 <div className="form-group">
                   <label>Email Address</label>
 
@@ -108,7 +101,7 @@ function Login({ router, providers }) {
               </Form>
             </Formik>
             {Object.values(providers).map((provider) => {
-              if (provider.name == "Credentials") {
+              if (provider.name === "Credentials") {
                 return null;
               }
 

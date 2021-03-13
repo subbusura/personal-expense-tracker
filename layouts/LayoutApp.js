@@ -75,14 +75,16 @@ export default function LayoutApp({ children }) {
                   })}
 
                   <li className={"nav-item"}>
-                    <a href={"#"} onClick={handleLogout}>
-                      {" "}
-                      <i
-                        className={"fa fa-sign-out"}
-                        aria-hidden="true"
-                      ></i>{" "}
-                      Logout{" "}
-                    </a>
+                    <Link href={"#"}>
+                      <a onClick={handleLogout}>
+                        {" "}
+                        <i
+                          className={"fa fa-sign-out"}
+                          aria-hidden="true"
+                        ></i>{" "}
+                        Logout{" "}
+                      </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
