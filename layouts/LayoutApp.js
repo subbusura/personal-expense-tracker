@@ -91,9 +91,7 @@ export default function LayoutApp({ children }) {
             </div>
           </div>
         </div>
-        <main>
-          <div className={"container-fluid"}>{children}</div>
-        </main>
+        <main>{children}</main>
       </div>
     </div>
   );
